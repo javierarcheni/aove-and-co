@@ -10,10 +10,8 @@ export default defineConfig({
   integrations: [
     alpinejs(),
     sitemap({
-      // Solo lo enlazado e indexable; el resto lleva noindex hasta su lanzamiento
-      filter: (page) =>
-        !/\/gracias\/$/.test(page) &&
-        !/\/(videopodcast|el-camino|eventos|productores|manifiesto)\/?$/.test(page),
+      // /gracias/ es funcional (destino del formulario), no debe indexarse
+      filter: (page) => !/\/gracias\/$/.test(page),
     }),
   ],
   vite: {
