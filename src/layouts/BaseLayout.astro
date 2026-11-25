@@ -5,6 +5,7 @@ interface Props {
   ruta?: string;
   imagen?: string;
   tipo?: 'website' | 'article';
+  noindex?: boolean;
 }
 
 const {
@@ -13,6 +14,7 @@ const {
   ruta = '/',
   imagen = '/og-aove-co.jpg',
   tipo = 'website',
+  noindex = false,
 } = Astro.props;
 
 const site = 'https://aove-and-co.netlify.app';
@@ -31,6 +33,7 @@ import '../styles/global.css';
     <meta name="theme-color" content="#182311" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={url} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <meta property="og:type" content={tipo} />
     <meta property="og:site_name" content="AOVE & Co — AOVE y Compañía" />
@@ -58,7 +61,7 @@ import '../styles/global.css';
       logo: `${site}/favicon.svg`,
       description,
       areaServed: ['Valencia', 'Comunidad Valenciana', 'Levante'],
-      sameAs: [],
+      founder: { '@type': 'Person', name: 'Javier Archeni' },
       makesOffer: [
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Videopódcast sobre cultura del AOVE' } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Catas y eventos pop-up en Valencia' } },

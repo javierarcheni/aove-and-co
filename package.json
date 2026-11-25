@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/alpinejs": "^1.0.0",
+    "@astrojs/sitemap": "^3.7.6",
     "alpinejs": "^3.17.5",
     "astro": "^7.4.13"
   },
