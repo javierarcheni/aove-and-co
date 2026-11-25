@@ -28,22 +28,8 @@ import { proximoEvento, eventosPasados } from '../data/contenido';
         <p class="mt-2 text-sm text-cream-300">{proximoEvento.fecha} · {proximoEvento.lugar}</p>
         <p class="mt-3 text-sm leading-relaxed">{proximoEvento.descripcion}</p>
         <p class="mt-2 font-bold text-brand-300">{proximoEvento.precio}</p>
-        <form name="reserva-evento" method="POST" action="/gracias/" data-netlify="true" netlify-honeypot="bot-field" class="mt-5 space-y-3">
-          <input type="hidden" name="form-name" value="reserva-evento" />
-          <p class="absolute top-auto -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true"><label>Si eres humano, deja esto vacío: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
-          <div class="grid gap-3 sm:grid-cols-2">
-            <input name="nombre" required placeholder="Tu nombre" aria-label="Nombre"
-              class="rounded-xl border border-white/15 bg-ink-950 px-4 py-2.5 text-cream-50 placeholder:text-cream-500 outline-none focus:border-brand-400" />
-            <input name="email" type="email" required placeholder="tu@email.com" aria-label="Email"
-              class="rounded-xl border border-white/15 bg-ink-950 px-4 py-2.5 text-cream-50 placeholder:text-cream-500 outline-none focus:border-brand-400" />
-          </div>
-          <label class="flex items-center gap-3 text-sm">Plazas
-            <select name="plazas" class="rounded-xl border border-white/15 bg-ink-950 px-4 py-2.5">
-              <option>1</option><option>2</option><option>3</option><option>4</option>
-            </select>
-          </label>
-          <button class="w-full rounded-full bg-brand-400 py-3 font-bold text-ink-950 hover:bg-brand-300">Reservar / entrar en lista de espera</button>
-        </form>
+        <p class="mt-5 text-sm text-cream-300">Las reservas se gestionan desde el formulario general: cuéntanos cuántos sois y para qué fecha.</p>
+        <a href="/#contacto" class="mt-4 inline-block w-full rounded-full bg-brand-400 py-3 text-center font-bold text-ink-950 hover:bg-brand-300">Ir al formulario de contacto</a>
       </div>
 
       <div>
