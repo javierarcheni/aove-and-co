@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import finca from '../assets/nosotros/finca.svg';
+---
+
+<BaseLayout
+  title="Manifiesto — Por qué nace AOVE & Co en Valencia"
+  description="Manifiesto de AOVE & Co: un puente entre almazaras artesanales y el Levante, con videopódcast, catas y futura tienda en Valencia."
+  ruta="/manifiesto"
+>
+  <Navbar />
+  <main class="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <p class="text-xs font-bold tracking-[0.2em] text-brand-400 uppercase">Manifiesto</p>
+    <h1 class="font-display mt-2 text-4xl font-bold text-balance sm:text-5xl">
+      Nacimos para que el buen aceite deje de ser un secreto.
+    </h1>
+    <Image src={finca} alt="Olivar al atardecer" widths={[600, 1000]} sizes="(max-width: 768px) 100vw, 700px" loading="lazy" class="mt-8 aspect-[16/9] w-full rounded-3xl border border-white/10 object-cover opacity-90" />
+
+    <div class="prose-invert mt-8 space-y-5 text-lg leading-relaxed text-cream-100">
+      <p>
+        <strong class="text-brand-300">AOVE &amp; Co se lee “AOVE y Compañía”.</strong> Y es literal:
+        somos la compañía entre quien lo hace y quien lo disfruta. Nació en Valencia
+        al comprobar algo incómodo: en Levante, tierra de producto y de mesa, cuesta
+        encontrar un virgen extra trazable, de cosecha temprana y con historia detrás.
+      </p>
+      <p>
+        Mientras, en Jaén y en decenas de almazaras familiares como
+        <strong> Oro Tradicional</strong>, hay un producto extraordinario que a veces
+        no llega, no se cuenta o se pierde en lineales confusos. Queremos ser ese puente.
+      </p>
+      <h2 class="font-display pt-4 text-2xl font-bold text-cream-50">Lo que creemos</h2>
+      <ul class="list-none space-y-3 text-base">
+        <li><span class="font-bold text-brand-400">01 — El AOVE real se puede contar sin pijos.</span> Frutado, amargo y picante no son insultos: son señales de vida y de polifenoles.</li>
+        <li><span class="font-bold text-brand-400">02 — El precio justo se explica.</span> Enseñamos costes del olivo a la botella para que pagar bien no sea fe, sea criterio.</li>
+        <li><span class="font-bold text-brand-400">03 — La comunidad va antes que la tienda.</span> Primero videopódcast, pop-ups y lista de espera. La tienda física en Valencia será la consecuencia, no el punto de partida.</li>
+      </ul>
+      <h2 class="font-display pt-4 text-2xl font-bold text-cream-50">A dónde vamos</h2>
+      <p>
+        A una tienda especializada en Valencia donde catar antes de comprar, con
+        grifos de temporada, club de cata y cocina de maridaje. Hasta entonces:
+        cada episodio, cada cata y cada lote que traemos de Jaén es un ladrillo de esa tienda.
+      </p>
+      <p class="text-cream-300">Si compartes esta forma de mirar el aceite —como productor, cocinero o curioso—, ya eres &amp; Co.</p>
+    </div>
+
+    <div class="mt-10 flex flex-wrap gap-3">
+      <a href="/eventos#reserva" class="rounded-full bg-brand-400 px-6 py-3 font-bold text-ink-950 hover:bg-brand-300">Ven a una cata</a>
+      <a href="/productores" class="rounded-full border border-white/20 px-6 py-3 font-bold hover:border-brand-400 hover:text-brand-300">Colabora con nosotros</a>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

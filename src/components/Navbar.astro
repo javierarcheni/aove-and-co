@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+import logoClaro from "../assets/logos/logo-aove-y-co.svg";
+---
+
+<header class="bg-transparent">
+  <div class="mx-auto flex max-w-6xl justify-center px-4 py-6 sm:px-6">
+    <a href="/" aria-label="AOVE & Co — inicio">
+      <Image
+        src={logoClaro}
+        alt="AOVE & Co — AOVE y Compañía"
+        widths={[280, 360]}
+        sizes="280px"
+        loading="eager"
+        class="h-16 w-auto sm:h-20"
+      />
+    </a>
+  </div>
+</header>

@@ -1,0 +1,355 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
+import retrato from "../assets/hero/javier-archeni-aoveyco.jpg";
+---
+
+<BaseLayout
+  title="AOVE & Co — Hola, somos AOVE & Co"
+  description="Un proyecto independiente de comercialización, promoción y divulgación del aceite de oliva virgen extra. El AOVE, un poco más cerca."
+  ruta="/"
+>
+  <Navbar />
+  <main>
+    <section class="relative overflow-hidden">
+      <div class="relative mx-auto grid max-w-6xl items-start gap-10 px-4 py-14 sm:px-6 md:grid-cols-[0.85fr_1.15fr] md:py-20">
+        <div class="md:sticky md:top-8">
+          <Image
+            src={retrato}
+            alt="AOVE & Co"
+            widths={[320, 480, 640]}
+            sizes="(max-width: 768px) 70vw, 35vw"
+            loading="eager"
+            class="mx-auto aspect-[4/5] -rotate-1 w-full max-w-xs rounded-3xl border border-white/10 object-cover sm:max-w-sm"
+          />
+
+          <p class="mt-4 text-center text-cream-300">Javier Archeni</p>
+        </div>
+        <div class="max-w-xl">
+          <p class="inline-flex items-center gap-2 rounded-full border border-brand-400/40 bg-brand-400/10 px-4 py-1.5 text-xs font-bold tracking-widest text-brand-300 uppercase">
+            <span class="relative flex size-2">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-75"></span>
+              <span class="relative inline-flex size-2 rounded-full bg-brand-400"></span>
+            </span>
+            Proyecto en lanzamiento
+          </p>
+          <h1 class="font-display mt-4 text-4xl leading-tight font-bold text-balance sm:text-5xl">
+            El AOVE, siempre{" "}
+            <span class="text-brand-400">mejor en compañía.</span>
+          </h1>
+          <div class="mt-6 space-y-4 leading-relaxed text-cream-100">
+            <p>
+              Detrás de AOVE &amp; Co. está Javier Archeni, una persona
+              arrancando un proyecto con una idea muy clara: ser un aliado útil
+              para las marcas pequeñas que hacen un buen AOVE.
+            </p>
+            <p>
+              No vengo a reinventar el aceite, porque ya hay productores y
+              profesionales haciendo un trabajo increíble. Vengo a aportar valor
+              donde más se necesita para salir a mercado: creando visibilidad y
+              abriendo canales en Valencia y el Levante.
+            </p>
+            <p>
+              Empezamos en pequeño y en abierto: con contenido para darles voz,
+              catas cercanas en Valencia para probar juntos y los primeros pasos
+              comerciales, con el horizonte de construir algún día nuestro
+              propio espacio físico.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-t border-white/10">
+      <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-20">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="font-display max-w-2xl text-3xl font-bold text-balance sm:text-4xl">
+            ¿Y qué <span class="text-brand-400">hace AOVE & Co?</span>
+          </h2>
+          <p class="mt-4 max-w-2xl text-lg text-cream-300">
+            Cuatro frentes en los que trabajo para acercar el buen AOVE a las
+            personas.
+          </p>
+        </div>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2">
+          <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-ink-800 p-7 transition duration-300 hover:-translate-y-1 hover:border-brand-400/40 hover:shadow-xl hover:shadow-brand-400/10">
+            <span class="inline-grid size-12 place-items-center rounded-2xl border border-brand-400/25 bg-brand-400/10">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-6 text-brand-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M7 16V8m0 0L3 12m4-4l4 4m6 0v8m0 0l4-4m-4 4l-4-4"
+                />
+              </svg>
+            </span>
+            <h3 class="font-display mt-4 text-xl font-bold text-cream-50">
+              Comercialización y mercados
+            </h3>
+            <p class="mt-2 leading-relaxed text-cream-300">
+              Ayudo a productores y marcas a encontrar clientes: busco canales,
+              hablo con comercios y hostelería y abro mercado para sus aceites.
+            </p>
+          </article>
+          <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-ink-800 p-7 transition duration-300 hover:-translate-y-1 hover:border-brand-400/40 hover:shadow-xl hover:shadow-brand-400/10">
+            <span class="inline-grid size-12 place-items-center rounded-2xl border border-brand-400/25 bg-brand-400/10">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-6 text-brand-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 2C12 2 5 10.2 5 14.5a7 7 0 0 0 14 0C19 10.2 12 2 12 2Z"
+                />
+              </svg>
+            </span>
+            <h3 class="font-display mt-4 text-xl font-bold text-cream-50">
+              Selección y promoción
+            </h3>
+            <p class="mt-2 leading-relaxed text-cream-300">
+              Descubro aceites que merecen la pena y cuento los proyectos que
+              hay detrás de cada botella.
+            </p>
+          </article>
+          <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-ink-800 p-7 transition duration-300 hover:-translate-y-1 hover:border-brand-400/40 hover:shadow-xl hover:shadow-brand-400/10">
+            <span class="inline-grid size-12 place-items-center rounded-2xl border border-brand-400/25 bg-brand-400/10">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-6 text-brand-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M7 3h10l-1.5 8.5a4.5 4.5 0 0 1-7 0L7 3Z"
+                />
+                <path stroke-linecap="round" d="M12 16v5m-3 0h6" />
+              </svg>
+            </span>
+            <h3 class="font-display mt-4 text-xl font-bold text-cream-50">
+              Experiencias y divulgación
+            </h3>
+            <p class="mt-2 leading-relaxed text-cream-300">
+              El aceite se entiende probándolo: organizo degustaciones y
+              encuentros para descubrir matices y origen.
+            </p>
+          </article>
+          <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-ink-800 p-7 transition duration-300 hover:-translate-y-1 hover:border-brand-400/40 hover:shadow-xl hover:shadow-brand-400/10">
+            <span class="inline-grid size-12 place-items-center rounded-2xl border border-brand-400/25 bg-brand-400/10">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-6 text-brand-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 7h12l1 13H5L6 7Z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 7a3 3 0 0 1 6 0"
+                />
+              </svg>
+            </span>
+            <h3 class="font-display mt-4 text-xl font-bold text-cream-50">
+              Venta y distribución
+            </h3>
+            <p class="mt-2 leading-relaxed text-cream-300">
+              Facilito que buenos aceites lleguen a particulares y
+              profesionales, en tienda, espacios y online.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- CONTACTO -->
+    <section class="border-t border-white/10">
+      <div class="mx-auto max-w-2xl px-4 py-14 text-center sm:px-6 md:py-20">
+        <div>
+          <p class="text-xs font-bold tracking-[0.2em] text-brand-400 uppercase">
+            Contacto
+          </p>
+          <h2 class="font-display mt-2 text-3xl font-bold text-balance sm:text-4xl">
+            Me encantará saber de ti
+          </h2>
+          <p class="mx-auto mt-4 max-w-md leading-relaxed text-cream-300">
+            Si haces un buen aceite, si lo vendes o si simplemente te apasiona,
+            escríbeme. Leo todo y respondo en 48h.
+          </p>
+          <p class="mt-5">
+            <a
+              href="mailto:hola@aoveyco.com"
+              class="inline-flex items-center gap-2 rounded-full border border-brand-400/40 px-5 py-2.5 text-sm font-bold text-brand-300 transition hover:bg-brand-400 hover:text-ink-950"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 8l7.9 5.3a1 1 0 0 0 1.2 0L20 8M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z"
+                />
+              </svg>
+              hola@aoveyco.com
+            </a>
+          </p>
+        </div>
+        <form
+          name="contacto"
+          method="POST"
+          action="/gracias/"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          x-data="{ nombre: '', email: '', mensaje: '', privacidad: false, get valido() { return this.privacidad && this.nombre.trim().length > 1 && /.+@.+\..+/.test(this.email) && this.mensaje.trim().length > 5 } }"
+          class="relative mt-10 overflow-hidden rounded-3xl border border-white/10 bg-ink-800 p-6 text-left shadow-2xl shadow-black/30 sm:p-8"
+        >
+          <div
+            class="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-400 via-brand-300 to-transparent"
+            aria-hidden="true"
+          ></div>
+          <input type="hidden" name="form-name" value="contacto" />
+          <p
+            class="absolute top-auto -left-[9999px] h-px w-px overflow-hidden"
+            aria-hidden="true"
+          >
+            <label>
+              Si eres humano, deja esto vacío:{" "}
+              <input name="bot-field" tabindex="-1" autocomplete="off" />
+            </label>
+          </p>
+          <p class="font-display text-lg font-bold text-cream-50">
+            Escríbeme directamente
+          </p>
+          <p class="mt-1 text-sm text-cream-500">Deja tu mensaje aquí</p>
+          <div class="mt-5 space-y-4">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label
+                  class="text-xs font-bold tracking-wider text-cream-300 uppercase"
+                  for="nombre"
+                >
+                  Nombre
+                </label>
+                <input
+                  id="nombre"
+                  name="nombre"
+                  x-model="nombre"
+                  required
+                  autocomplete="name"
+                  placeholder="Tu nombre"
+                  class="mt-1.5 w-full rounded-2xl border border-white/15 bg-ink-950 px-4 py-3 text-cream-50 placeholder:text-cream-500/70 transition outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-400/30"
+                />
+              </div>
+              <div>
+                <label
+                  class="text-xs font-bold tracking-wider text-cream-300 uppercase"
+                  for="email"
+                >
+                  Email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  x-model="email"
+                  required
+                  autocomplete="email"
+                  placeholder="tu@email.com"
+                  class="mt-1.5 w-full rounded-2xl border border-white/15 bg-ink-950 px-4 py-3 text-cream-50 placeholder:text-cream-500/70 transition outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-400/30"
+                />
+              </div>
+            </div>
+            <div>
+              <div class="flex items-baseline justify-between">
+                <label
+                  class="text-xs font-bold tracking-wider text-cream-300 uppercase"
+                  for="mensaje"
+                >
+                  Mensaje
+                </label>
+                <span
+                  class="text-xs text-cream-500"
+                  x-text="(mensaje || '').length + ' caracteres'"
+                ></span>
+              </div>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                x-model="mensaje"
+                required
+                rows="5"
+                placeholder="Cuéntame: soy productor, tienda, hostelería… ¿qué haces y qué buscas?"
+                class="mt-1.5 w-full resize-y rounded-2xl border border-white/15 bg-ink-950 px-4 py-3 text-cream-50 placeholder:text-cream-500/70 transition outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-400/30"
+              ></textarea>
+            </div>
+            <label class="flex cursor-pointer items-start gap-3 text-left text-sm text-cream-300">
+              <input
+                id="privacidad"
+                type="checkbox"
+                name="privacidad"
+                x-model="privacidad"
+                required
+                class="mt-1 size-4 shrink-0 accent-[#addd10]"
+              />
+              <span>
+                He leído y acepto la
+                <a
+                  href="/privacidad/"
+                  target="_blank"
+                  rel="noopener"
+                  class="underline decoration-brand-400 underline-offset-4 hover:text-brand-300"
+                >
+                  política de privacidad
+                </a>
+                .
+              </span>
+            </label>
+            <button
+              :disabled="!valido"
+              :class="valido ? 'bg-brand-400 text-ink-950 hover:bg-brand-300 hover:shadow-lg hover:shadow-brand-400/20' : 'cursor-not-allowed bg-white/10 text-cream-500'"
+              class="group flex w-full items-center justify-center gap-2 rounded-full py-3.5 font-bold transition"
+            >
+              Enviar mensaje
+              <span
+                aria-hidden="true"
+                class="transition-transform group-hover:translate-x-0.5"
+              >
+                →
+              </span>
+            </button>
+            <p class="text-center text-xs text-cream-500">
+              Sin spam. Solo respondo yo, en 48h.
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

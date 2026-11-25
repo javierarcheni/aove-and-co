@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Prompt", ui-sans-serif, system-ui, sans-serif;
+
+  /* Lima del logo AOVE & Co */
+  --color-brand-50: #f7fbe4;
+  --color-brand-100: #ecf5c6;
+  --color-brand-200: #d9eb90;
+  --color-brand-300: #c3e052;
+  --color-brand-400: #addd10;
+  --color-brand-500: #8fb50c;
+  --color-brand-600: #6f8d0a;
+  --color-brand-700: #566d0b;
+  --color-brand-800: #3a4a0e;
+
+  /* Verde noche del logo */
+  --color-ink-950: #0e150c;
+  --color-ink-900: #182311;
+  --color-ink-800: #1f2d16;
+  --color-ink-700: #2a3a1e;
+
+  /* Crema del logo */
+  --color-cream-50: #f4f1e9;
+  --color-cream-100: #f3f0e9;
+  --color-cream-300: #d9d3bf;
+  --color-cream-500: #a8a28a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink-900);
+  background-image:
+    radial-gradient(ellipse 70rem 26rem at 50% -10rem, rgba(173, 221, 16, 0.14), transparent 65%),
+    radial-gradient(ellipse 50rem 30rem at 85% 40%, rgba(173, 221, 16, 0.05), transparent 60%),
+    radial-gradient(ellipse 50rem 30rem at 10% 65%, rgba(173, 221, 16, 0.04), transparent 60%),
+    linear-gradient(var(--color-ink-900), var(--color-ink-950));
+  background-attachment: fixed;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+::selection {
+  background: var(--color-brand-400);
+  color: var(--color-ink-950);
+}

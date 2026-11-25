@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<BaseLayout
+  title="Productores y distribución AOVE en Levante — AOVE & Co"
+  description="¿Eres almazara o productor artesanal? Visibilidad en videopódcast, catas en Valencia y distribución en Levante. Y carta de AOVEs para Horeca y tiendas."
+  ruta="/productores"
+>
+  <Navbar />
+  <main class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+    <SectionHeading
+      kicker="Productores · Distribución · Horeca"
+      titulo="Tu aceite merece una historia bien contada en Levante"
+      texto="Actuamos como puente: contamos tu origen en el videopódcast, lo ponemos en boca en Valencia y lo representamos comercialmente. Sin intermediarios opacos."
+    />
+
+    <div class="mt-8 grid gap-5 md:grid-cols-3">
+      {[
+        { t: 'Visibilidad real', d: 'Episodio en tu almazara + reels + notas con enlace. Nada de publirreportaje: proceso, gente y territorio.' },
+        { t: 'Activación en Valencia', d: 'Tus aceites en catas pop-up con feedback de consumidores y profesionales. Validación antes de escalar.' },
+        { t: 'Distribución en Levante', d: 'Representación en Horeca y tiendas gourmet de Valencia y alrededores, con materiales de cata y formación.' },
+      ].map((c) => (
+        <div class="rounded-3xl border border-white/10 bg-ink-800 p-6">
+          <h2 class="font-display text-xl font-bold text-cream-50">{c.t}</h2>
+          <p class="mt-2 text-sm leading-relaxed text-cream-300">{c.d}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-2">
+      <form name="productores" method="POST" action="/gracias/" data-netlify="true" netlify-honeypot="bot-field"
+        class="rounded-3xl border border-brand-400/30 bg-ink-800 p-6 sm:p-8">
+        <input type="hidden" name="form-name" value="productores" />
+        <p class="absolute top-auto -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true"><label>Si eres humano, deja esto vacío: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+        <h2 class="font-display text-2xl font-bold text-cream-50">Soy productor / almazara</h2>
+        <p class="mt-1 text-sm text-cream-300">Cuéntanos lo esencial y te llamamos en 48h.</p>
+        <div class="mt-5 space-y-3 text-sm">
+          <div class="grid gap-3 sm:grid-cols-2">
+            <input name="almazara" required placeholder="Nombre de almazara" aria-label="Almazara" class="rounded-xl border border-white/15 bg-ink-950 px-4 py-2.5 outline-none focus:border-brand-400" />
+            <input name="origen" required placeholder="Origen (p. ej. Jaén)" aria-label="Origen" class="rounded-xl border border-white/15 bg-ink-950 px-4 py-2.5 outline-none focus:border-brand-400" />
+          </div>
+          <div class="grid gap-3 sm:grid-cols-2">
+            <input name="variedades" placeholder="Variedades (picual, arbequina…)" aria-label="Variedades" class="rounded-xl border border-white/15 bg-ink-950 px-4 py-2.5 outline-none focus:border-brand-400" />
+            <input name="produccion" placeholder="Producción aprox. (litros)" aria-label="Producción" class="rounded-xl border border-white/15 bg-ink-950 px-4 py-2.5 outline-none focus:border-brand-400" />
+          </div>
+          <textarea name="objetivo" rows="4" placeholder="Objetivo: visibilidad, distribución en Levante, evento conjunto…" aria-label="Objetivo" class="w-full rounded-xl border border-white/15 bg-ink-950 px-4 py-2.5 outline-none focus:border-brand-400"></textarea>
+          <input name="contacto" required placeholder="Email o teléfono" aria-label="Contacto" class="w-full rounded-xl border border-white/15 bg-ink-950 px-4 py-2.5 outline-none focus:border-brand-400" />
+          <button class="w-full rounded-full bg-brand-400 py-3 font-bold text-ink-950 hover:bg-brand-300">Presentar mi almazara</button>
+        </div>
+      </form>
+
+      <div id="horeca" class="scroll-mt-28 rounded-3xl border border-white/10 bg-ink-950/60 p-6 sm:p-8">
+        <h2 class="font-display text-2xl font-bold text-cream-50">Soy Horeca / tienda en Valencia</h2>
+        <p class="mt-2 text-sm leading-relaxed text-cream-300">
+          Carta de AOVEs por copas o en mesa, formación corta para sala, formatos profesionales
+          (2L, 5L, bag-in-box) y reposición ágil en la ciudad.
+        </p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li class="flex gap-2"><span class="text-brand-400">→</span> Cata en tu local sin coste para elegir tu aceite de cabecera.</li>
+          <li class="flex gap-2"><span class="text-brand-400">→</span> Ficha de productor para carta: variedad, origen y maridaje.</li>
+          <li class="flex gap-2"><span class="text-brand-400">→</span> Caso Oro Tradicional (Jaén): ya disponible para hostelería.</li>
+        </ul>
+        <form name="horeca" method="POST" action="/gracias/" data-netlify="true" netlify-honeypot="bot-field" class="mt-5 space-y-3 text-sm">
+          <input type="hidden" name="form-name" value="horeca" />
+          <p class="absolute top-auto -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true"><label>Si eres humano, deja esto vacío: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+          <div class="grid gap-3 sm:grid-cols-2">
+            <input name="negocio" required placeholder="Nombre del negocio" aria-label="Negocio" class="rounded-xl border border-white/15 bg-ink-900 px-4 py-2.5 outline-none focus:border-brand-400" />
+            <input name="contacto" required placeholder="Email o teléfono" aria-label="Contacto" class="rounded-xl border border-white/15 bg-ink-900 px-4 py-2.5 outline-none focus:border-brand-400" />
+          </div>
+          <button class="w-full rounded-full border border-brand-400 px-6 py-3 font-bold text-brand-300 hover:bg-brand-400 hover:text-ink-950">Quiero cata en mi local</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
