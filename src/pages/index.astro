@@ -187,7 +187,15 @@ import retrato from "../assets/hero/javier-archeni-aoveyco.jpg";
     </section>
     <!-- CONTACTO -->
     <section id="contacto" class="scroll-mt-8 border-t border-white/10">
-      <div class="mx-auto max-w-2xl px-4 py-14 text-center sm:px-6 md:py-20">
+      <!--
+        El estado de Alpine va en este contenedor y NO en el <form>: Netlify
+        reescribe la etiqueta <form> al procesar los formularios y rompe las
+        comillas simples del x-data, dejando el componente sin inicializar.
+      -->
+      <div
+        class="mx-auto max-w-2xl px-4 py-14 text-center sm:px-6 md:py-20"
+        x-data="{ nombre: '', email: '', mensaje: '', privacidad: false, get valido() { return this.privacidad && this.nombre.trim().length > 1 && /.+@.+\..+/.test(this.email) && this.mensaje.trim().length > 5 } }"
+      >
         <div>
           <p class="text-xs font-bold tracking-[0.2em] text-brand-400 uppercase">
             Contacto
@@ -228,7 +236,6 @@ import retrato from "../assets/hero/javier-archeni-aoveyco.jpg";
           action="/gracias/"
           data-netlify="true"
           netlify-honeypot="bot-field"
-          x-data="{ nombre: '', email: '', mensaje: '', privacidad: false, get valido() { return this.privacidad && this.nombre.trim().length > 1 && /.+@.+\..+/.test(this.email) && this.mensaje.trim().length > 5 } }"
           class="relative mt-10 overflow-hidden rounded-3xl border border-white/10 bg-ink-800 p-6 text-left shadow-2xl shadow-black/30 sm:p-8"
         >
           <div
