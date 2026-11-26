@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import Navbar from '../../components/Navbar.astro'
+import Footer from '../../components/Footer.astro'
+import HomePage from '../../components/HomePage.astro'
+import { pathFor } from '../../i18n/config'
+import { t } from '../../i18n/ui'
+
+const lang = 'en'
+---
+
+<BaseLayout
+	title={t(lang, 'meta.home.title')}
+	description={t(lang, 'meta.home.description')}
+	ruta={pathFor('home', lang)}
+>
+	<Navbar />
+	<HomePage lang={lang} />
+	<Footer />
+</BaseLayout>

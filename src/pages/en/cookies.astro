@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import Navbar from '../../components/Navbar.astro'
+import Footer from '../../components/Footer.astro'
+import { pathFor } from '../../i18n/config'
+import { t } from '../../i18n/ui'
+
+const lang = 'en'
+---
+
+<BaseLayout
+	title={t(lang, 'meta.cookies.title')}
+	description={t(lang, 'meta.cookies.description')}
+	ruta={pathFor('cookies', lang)}
+>
+	<Navbar />
+	<main class="mx-auto max-w-3xl px-4 py-14 sm:px-6 md:py-20">
+		<p class="text-xs font-bold tracking-[0.2em] text-brand-400 uppercase">
+			{t(lang, 'legal.eyebrow')}
+		</p>
+		<h1 class="font-display mt-2 text-4xl font-bold text-balance sm:text-5xl">
+			Cookie policy
+		</h1>
+		<p class="mt-3 text-sm text-cream-500">{t(lang, 'legal.lastUpdate')}</p>
+		<p class="mt-3 text-sm text-cream-500">
+			English translation for information purposes only. The Spanish version is the
+			binding one.
+		</p>
+
+		<div class="mt-8 space-y-6 leading-relaxed text-cream-100">
+			<section>
+				<h2 class="font-display text-xl font-bold text-cream-50">
+					1. General approach
+				</h2>
+				<p class="mt-2 text-cream-300">
+					We do not use advertising, remarketing or profiling cookies. Only
+					technologies necessary for the site to work and stay secure (exempt from
+					consent under art. 22.2 LSSI-CE).
+				</p>
+			</section>
+			<section>
+				<h2 class="font-display text-xl font-bold text-cream-50">
+					2. What may load
+				</h2>
+				<ul class="mt-2 list-disc pl-5 text-cream-300">
+					<li>
+						<strong>Form anti-spam protection</strong> (technical honeypot field):
+						no cookies, server-side verification only.
+					</li>
+					<li>
+						<strong>Google Fonts:</strong> font stylesheets; technical request to
+						Google's server (IP), no cookies of ours.
+					</li>
+					<li>
+						<strong>YouTube:</strong> if you play an embedded video from the video
+						podcast, YouTube may set its own cookies. Nothing loads until you press
+						play.
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2 class="font-display text-xl font-bold text-cream-50">
+					3. Managing cookies
+				</h2>
+				<p class="mt-2 text-cream-300">
+					You can block or delete cookies in your browser. If you block necessary
+					technologies, the form may not work correctly.
+				</p>
+			</section>
+			<section>
+				<h2 class="font-display text-xl font-bold text-cream-50">
+					4. More information
+				</h2>
+				<p class="mt-2 text-cream-300">
+					See the
+					<a
+						class="underline decoration-brand-400 underline-offset-4 hover:text-brand-300"
+						href={pathFor('privacy', lang)}>privacy policy</a
+					> and the
+					<a
+						class="underline decoration-brand-400 underline-offset-4 hover:text-brand-300"
+						href={pathFor('legal', lang)}>legal notice</a
+					>.
+				</p>
+			</section>
+		</div>
+	</main>
+	<Footer />
+</BaseLayout>

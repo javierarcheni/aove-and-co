@@ -1,19 +1,66 @@
 ---
-import { Image } from "astro:assets";
-import logoClaro from "../assets/logos/logo-aove-y-co.svg";
+import { Image } from 'astro:assets'
+import logoClaro from '../assets/logos/logo-aove-y-co.svg'
+import {
+	alternatePath,
+	getLangFromUrl,
+	pathFor,
+	type Lang
+} from '../i18n/config'
+import { useTranslations } from '../i18n/ui'
+
+const lang = getLangFromUrl(Astro.url)
+const tr = useTranslations(lang)
+
+const homePath = pathFor('home', lang)
+const otherLang: Lang = lang === 'es' ? 'en' : 'es'
+const otherPath = alternatePath(Astro.url.pathname, otherLang)
 ---
 
 <header class="bg-transparent">
-  <div class="mx-auto flex max-w-6xl justify-center px-4 py-6 sm:px-6">
-    <a href="/" aria-label="AOVE & Co — inicio">
-      <Image
-        src={logoClaro}
-        alt="AOVE & Co — AOVE y Compañía"
-        widths={[280, 360]}
-        sizes="280px"
-        loading="eager"
-        class="h-16 w-auto sm:h-20"
-      />
-    </a>
-  </div>
+	<div class="relative mx-auto flex max-w-6xl justify-center px-4 py-6 sm:px-6">
+		<a href={homePath} aria-label={tr('nav.homeLabel')}>
+			<Image
+				src={logoClaro}
+				alt={tr('nav.logoAlt')}
+				widths={[280, 360]}
+				sizes="280px"
+				loading="eager"
+				class="h-16 w-auto sm:h-20"
+			/>
+		</a>
+
+		<nav
+			class="absolute top-1/2 right-4 flex -translate-y-1/2 items-center gap-1 text-xs font-bold tracking-widest uppercase sm:right-6"
+			aria-label={tr('nav.language')}
+		>
+			<a
+				href={lang === 'es' ? Astro.url.pathname : otherPath}
+				hreflang="es"
+				aria-current={lang === 'es' ? 'true' : undefined}
+				class:list={[
+					'rounded-full px-2.5 py-1 transition',
+					lang === 'es'
+						? 'text-brand-300'
+						: 'text-cream-500 hover:text-brand-300'
+				]}
+			>
+				ES
+			</a>
+			<span class="text-cream-500/40" aria-hidden="true">/</span>
+			<a
+				href={lang === 'en' ? Astro.url.pathname : otherPath}
+				hreflang="en"
+				aria-current={lang === 'en' ? 'true' : undefined}
+				class:list={[
+					'rounded-full px-2.5 py-1 transition',
+					lang === 'en'
+						? 'text-brand-300'
+						: 'text-cream-500 hover:text-brand-300'
+				]}
+			>
+				EN
+			</a>
+		</nav>
+	</div>
 </header>
