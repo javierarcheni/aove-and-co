@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 // Web estática lista para Netlify (output: 'static')
 export default defineConfig({
   output: 'static',
-  site: 'https://aove-and-co.netlify.app',
+  site: 'https://aoveyco.com',
   integrations: [
     alpinejs(),
     sitemap({
